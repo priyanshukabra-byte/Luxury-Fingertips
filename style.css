@@ -1,0 +1,449 @@
+/* ==========================================================
+   Luxury@fingertips — design tokens
+   ========================================================== */
+:root {
+  --cream:      #F6F1E4;
+  --stone:      #DCD3B0;
+  --ink:        #221F1A;
+  --ink-soft:   #4A463C;
+  --olive:      #6B6B4E;
+  --wine:       #5C1F27;
+  --wine-hover: #47161C;
+  --gold:       #B08D57;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Jost', 'Segoe UI', Arial, sans-serif;
+
+  --max-width: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--wine); }
+
+/* ==========================================================
+   Header / nav
+   ========================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: rgba(246, 241, 228, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--stone);
+}
+
+.brand-mark {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 15px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+.site-nav a:hover { color: var(--wine); }
+
+.nav-cta {
+  background: var(--wine);
+  color: #fff !important;
+  padding: 9px 18px;
+  border-radius: 2px;
+}
+
+.nav-cta:hover { background: var(--wine-hover); }
+
+/* ==========================================================
+   Torn-paper signature divider
+   ========================================================== */
+.torn-divider {
+  height: 26px;
+  width: 100%;
+  background: var(--stone);
+  clip-path: polygon(
+    0% 40%, 4% 55%, 9% 35%, 14% 60%, 19% 42%, 24% 65%, 29% 38%,
+    34% 58%, 40% 45%, 45% 68%, 50% 40%, 55% 62%, 60% 46%,
+    65% 70%, 70% 42%, 75% 60%, 80% 44%, 85% 66%, 90% 40%,
+    95% 58%, 100% 45%, 100% 100%, 0% 100%
+  );
+}
+
+/* ==========================================================
+   Hero
+   ========================================================== */
+.hero {
+  background: var(--stone);
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  text-align: center;
+}
+
+.hero-logo {
+  max-width: 420px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.hero-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink-soft);
+  margin: 20px auto 28px;
+  max-width: 480px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  padding: 14px 34px;
+  border-radius: 2px;
+  border: 1px solid var(--wine);
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--wine);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--wine-hover);
+  border-color: var(--wine-hover);
+}
+
+/* ==========================================================
+   Pillars (Bags / Shoes / Accessories)
+   ========================================================== */
+.pillars {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pillar-card {
+  background: #fff;
+  padding: 32px 24px;
+  text-align: center;
+  border: 1px solid var(--stone);
+}
+
+.pillar-icon {
+  width: 42px;
+  height: 42px;
+  color: var(--wine);
+  margin: 0 auto 14px;
+}
+
+.pillar-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.pillar-card p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ==========================================================
+   How it works
+   ========================================================== */
+.how {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 64px 24px;
+}
+
+.how h2 {
+  font-family: var(--font-display);
+  text-align: center;
+  font-size: 30px;
+  margin: 0 0 40px;
+}
+
+.steps {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.steps li {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.step-num {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.steps h4 {
+  margin: 4px 0 6px;
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+.steps p {
+  margin: 0;
+  font-size: 14.5px;
+  color: #C9C4B4;
+}
+
+/* ==========================================================
+   Order form
+   ========================================================== */
+.order {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 24px 72px;
+}
+
+.order h2 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  text-align: center;
+  margin: 24px 0 6px;
+}
+
+.order-sub {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin: 0 0 32px;
+}
+
+.form-section-title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--wine);
+  border-bottom: 1px solid var(--stone);
+  padding-bottom: 8px;
+  margin: 28px 0 4px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--stone);
+  border-radius: 2px;
+  font-size: 15px;
+  font-family: var(--font-body);
+  background: #fff;
+  color: var(--ink);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--wine);
+  box-shadow: 0 0 0 3px rgba(92, 31, 39, 0.12);
+}
+
+.field-message {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 6px 2px 0;
+}
+
+.field-message.success { color: #1a7f37; }
+.field-message.error   { color: #c0392b; }
+
+input[readonly] {
+  background: var(--stone);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+select:disabled {
+  background: #f1ede1;
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+.required-mark {
+  color: #c0392b;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 22px;
+}
+
+.checkbox-label input {
+  width: auto;
+}
+
+button {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  padding: 15px;
+  border-radius: 2px;
+  border: 1px solid var(--wine);
+  cursor: pointer;
+  margin-top: 14px;
+  transition: 0.2s ease;
+}
+
+#submitBtn {
+  background: var(--wine);
+  color: #fff;
+}
+
+#submitBtn:hover { background: var(--wine-hover); }
+
+#submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-reset {
+  background: transparent;
+  color: var(--ink-soft);
+  border-color: var(--stone);
+}
+
+.btn-reset:hover { border-color: var(--olive); color: var(--ink); }
+
+.form-message {
+  font-size: 14px;
+  min-height: 20px;
+  margin-top: 16px;
+}
+
+.form-message.success { color: #1a7f37; font-weight: 600; }
+.form-message.error   { color: #c0392b; font-weight: 600; }
+.form-message.loading { color: var(--ink-soft); }
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+footer {
+  background: var(--stone);
+  text-align: center;
+  padding: 40px 24px 26px;
+  color: var(--ink-soft);
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+.footer-copy {
+  font-size: 12.5px;
+  margin-top: 14px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+/* ==========================================================
+   Responsive breakpoints — tablet
+   ========================================================== */
+@media (max-width: 900px) {
+  .pillars { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================
+   Responsive breakpoints — mobile
+   ========================================================== */
+@media (max-width: 600px) {
+  .site-nav { gap: 14px; font-size: 13.5px; }
+  .brand-mark { height: 38px; }
+  .hero-inner { padding: 28px 18px 48px; }
+  .hero-sub { font-size: 17px; }
+  .how h2, .order h2 { font-size: 24px; }
+  .form-row { flex-direction: column; gap: 0; }
+  .order { padding: 12px 18px 56px; }
+  .btn { width: 100%; }
+}
