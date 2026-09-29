@@ -6,7 +6,7 @@
 // Apps Script > Deploy > Manage deployments > your deployment > Web app URL > Copy.
 // Paste it between the quotes. It must end in /exec.
 // Later updates: edit THIS deployment (pencil > New version) so the URL never changes.
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyPUoivNL9mRKbG4e0YdJ6OXH5SQhFN6db9ivsdN7-sPWLrpVN8kdpKA0zRdrjR0-Xwyw/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxn0ywptWD7-W4uD22YB0MAIgWlNypYMsv1H5rpykYqKZMd-Jz62wmsTR2DG2N075sY/exec";
 
 // WhatsApp number in international format, digits only.
 const WHATSAPP_NUMBER = "918623976355";
