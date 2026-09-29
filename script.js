@@ -6,7 +6,7 @@
 // Apps Script > Deploy > Manage deployments > your deployment > Web app URL > Copy.
 // Paste it between the quotes. It must end in /exec.
 // Later updates: edit THIS deployment (pencil > New version) so the URL never changes.
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxn0ywptWD7-W4uD22YB0MAIgWlNypYMsv1H5rpykYqKZMd-Jz62wmsTR2DG2N075sY/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzSCMSkIz3GbWNjNRwRAvlQ1dB8pPnyidkTsaymjgiQT5e294AnYU_kKA_STOPM428gzQ/exec";
 
 // WhatsApp number in international format, digits only.
 const WHATSAPP_NUMBER = "918623976355";
@@ -365,9 +365,13 @@ form.addEventListener("submit", async (e) => {
     showFormMessage("");
     showDone(payload);
   } catch (err) {
-    const msg = err.name === "AbortError"
-      ? "No reply from the order system. Check your internet connection and try again."
-      : err.message;
+    let msg = err.message;
+    if (err.name === "AbortError") {
+      msg = "No reply from the order system. Check your internet connection and try again.";
+    } else if (err.name === "TypeError") {
+      // The browser couldn't reach the order system at all.
+      msg = "We couldn't reach our order system. Check your internet connection and try again, or message us on WhatsApp to place your order.";
+    }
     showFormMessage(msg);
   } finally {
     clearTimeout(timer);
